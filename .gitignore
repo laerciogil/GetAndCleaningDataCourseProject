@@ -1,0 +1,12 @@
+# History files
+.Rhistory
+
+# R data files from past sessions
+.Rdata
+.DS_Store
+
+# Ignore data files and markdown output html files
+OriginalDataset/
+OriginalDataset/*
+README.html
+CodeBook.html

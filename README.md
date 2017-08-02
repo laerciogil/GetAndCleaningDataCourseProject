@@ -38,28 +38,36 @@ This files contains the descriptions of all activities that was performed by the
 
 **3. Subset the variables names that contains mean and standard deviation from features dataframe**  
 This action is performed searching the values that contains the text *mean* or *std* using the grep function:  
-`featuresIDX <- c(grep(".*mean.*", featuresDT[,2]),grep(".*std.*", featuresDT[,2]))`  
-`featuresNames <- featuresDT[featuresIDX,2]`
+```r
+featuresIDX <- c(grep(".*mean.*", featuresDT[,2]),grep(".*std.*", featuresDT[,2]))
+featuresNames <- featuresDT[featuresIDX,2]
+```
 
 **4. Set descriptive variable names**  
 Using the `gsub` function, all special characters are removed and the values are converted to *camelCase*.  
-`featuresNames = gsub("-mean", "Mean", featuresNames)`  
-`featuresNames = gsub("-std", "Std", featuresNames)`  
-`featuresNames <- gsub("[-()]", "", featuresNames)`
+```r
+featuresNames = gsub("-mean", "Mean", featuresNames)
+featuresNames = gsub("-std", "Std", featuresNames)
+featuresNames <- gsub("[-()]", "", featuresNames)
+```
 
 **5. Create the train and test dataframes**  
 At this point each dataframe (test and train) are binded with its subjects and activities correpondent dataframes using `cbind`.
 
 **6. Bind test and train dataframes**  
 Using rbind function, both dataframes are binded vertically. After this, the `merge` function is called to join the result with activity names datasets.  
-`data <- rbind(trainDT, testDT)`  
-`data <- merge(activityDT, data, by.x = "activityId", by.y = "activityId")`
+```r
+data <- rbind(trainDT, testDT)
+data <- merge(activityDT, data, by.x = "activityId", by.y = "activityId")
+```
 
 **7. Average of each variable for each activity and each subject**  
 Mean of each variable is calculated using the `agregate` function grouping by activityName and subjectId.  
-`data <- aggregate(data[, 4:length(data)], list(activity = data$activityName, subject = data$subjectId), mean)`
+```r
+data <- aggregate(data[, 4:length(data)], list(activity = data$activityName, subject = data$subjectId), mean)
+```
 
 **8. Write the tidy data to the tidy.txt file.**  
-`write.table(data, "./tidy.txt")`
-
-
+```r
+write.table(data, "./tidy.txt")
+```
