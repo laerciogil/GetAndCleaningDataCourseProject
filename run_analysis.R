@@ -1,5 +1,3 @@
-library(reshape2)
-
 ##Check if the content folder exists and create it
 folderPath <- "./OriginalDataset"
 if(!file.exists(folderPath)) {
