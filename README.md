@@ -8,7 +8,7 @@ This project aims to carry out a series of tasks proposed to meet the requiremen
 - `README.md`: File that describes the project, explains about the original dataset and lists steps performed by the tidying data process.
 - `CodeBook.md`: File that describes each variable in the tidy data file (`tidy.txt`) obtained at the end of the tidying data process.
 - `CodeBook.rmd`: R Markdown file used to generate the `CodeBook.md` file.
-- `run_analysis.R`: R script responsible for perform all the tidying data process.
+- `run_analysis.R`: R script responsible to perform all the tidying data process.
 - `tidy.txt`: Final product of the process performed by the script in the `run_analysis.R` file.
 
 ## Original Dataset
@@ -33,30 +33,30 @@ All this steps are performed by the `run_analysis.R` script.
 The directory that stores the original dataset files is created if it does not already exist. After this, the files are downloaded and then decompressed.
 
 
-**2. Read `activity_labels.txt` and `features.txt` files to data frames**  
+**2. Read `activity_labels.txt` and `features.txt` files to dataframes**  
 This files contains the descriptions of all activities that was performed by the volunteers and the variables names in the train and test datasets respectively.
 
-**3. Subset the variables names that contains mean and standard deviation from features data frame**  
-This action is performed searching the values that contains the text *mean* or *std* using the grep function:
+**3. Subset the variables names that contains mean and standard deviation from features dataframe**  
+This action is performed searching the values that contains the text *mean* or *std* using the grep function:  
 `featuresIDX <- c(grep(".*mean.*", featuresDT[,2]),grep(".*std.*", featuresDT[,2]))`
 `featuresNames <- featuresDT[featuresIDX,2]`
 
 **4. Set descriptive variable names**  
-Using the `gsub` function, all special characters are removed and the values are converted to *camelCase*.
+Using the `gsub` function, all special characters are removed and the values are converted to *camelCase*.  
 `featuresNames = gsub("-mean", "Mean", featuresNames)`
 `featuresNames = gsub("-std", "Std", featuresNames)`
 `featuresNames <- gsub("[-()]", "", featuresNames)`
 
-**5. Create the train and test data frames**  
-At this point each data frame (test and train) are binded with its subjects and activities correpondent data frames using `cbind`.
+**5. Create the train and test dataframes**  
+At this point each dataframe (test and train) are binded with its subjects and activities correpondent dataframes using `cbind`.
 
-**6. Bind test and train data frames**  
-Using rbind function, both data frames are binded vertically. After this, the `merge` function is called to join the result with activity names datasets.
+**6. Bind test and train dataframes**  
+Using rbind function, both dataframes are binded vertically. After this, the `merge` function is called to join the result with activity names datasets.  
 `data <- rbind(trainDT, testDT)`
 `data <- merge(activityDT, data, by.x = "activityId", by.y = "activityId")`
 
 **7. Average of each variable for each activity and each subject**  
-Mean of each variable is calculated using the `agregate` function by activityName and subjectId.
+Mean of each variable is calculated using the `agregate` function by activityName and subjectId.  
 `data <- aggregate(data[, 4:length(data)], list(activity = data$activityName, subject = data$subjectId), mean)`
 
 **8. Write the tidy data to the tidy.txt file.**  
