@@ -46,8 +46,8 @@ featuresNames <- featuresDT[featuresIDX,2]
 **4. Set descriptive variable names**  
 Using the `gsub` function, all special characters are removed and the values are converted to *camelCase*.  
 ```r
-featuresNames = gsub("-mean", "Mean", featuresNames)
-featuresNames = gsub("-std", "Std", featuresNames)
+featuresNames <- gsub("-mean", "Mean", featuresNames)
+featuresNames <- gsub("-std", "Std", featuresNames)
 featuresNames <- gsub("[-()]", "", featuresNames)
 ```
 
