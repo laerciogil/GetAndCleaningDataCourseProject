@@ -1,22 +1,21 @@
-# Get and Cleaning Data Course - Final Assignment
-Laercio Gil  
-01/08/2017  
+Get and Cleaning Data Course - Final Assignment
+============================================
 
-##About this project
+## About this project
 This project aims to carry out a series of tasks proposed to meet the requirements of the final work of the "Get and Cleaning Data" course of the "Data Science Specialization" in the Coursera taught by Johns Hopkins University. The purpose of this project is to demonstrate the ability to collect, restructure and clean a dataset, and prepare tidy data that can be used for further analysis.
 
-####The project includes the following files:
+#### The project includes the following files:
 - `README.md`: File that describes the project, explains about the original dataset and lists steps performed by the tidying data process.
 - `CodeBook.md`: File that describes each variable in the tidy data file (`tidy.txt`) obtained at the end of the tidying data process.
 - `CodeBook.rmd`: R Markdown file used to generate the `CodeBook.md` file.
 - `run_analysis.R`: R script responsible for perform all the tidying data process.
 - `tidy.txt`: Final product of the process performed by the script in the `run_analysis.R` file.
 
-##Original Dataset
+## Original Dataset
 We used the Human Activity Recognition Using Smartphones Dataset from the UCI Machine Learning Repository. These data were collected through an experiment with 30 volunteers performing six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) using the sensors embedded in the smartphone that each participant wore at the waist.  
 A full description of all files is available at the [site](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) where the [data](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) was obtained. Nevertheless, the script itself automatically downloads the data
 
-####The dataset includes the following main files:
+#### The dataset includes the following main files:
 - `README.txt`
 - `features_info.txt`: Shows information about the variables used on the feature vector.
 - `features.txt`: List of all features.
@@ -26,7 +25,7 @@ A full description of all files is available at the [site](http://archive.ics.uc
 - `test/X_test.txt`: Test set.
 - `test/y_test.txt`: Test labels.
 
-##Getting and tidying the Data step by step
+## Getting and tidying the Data step by step
 
 All this steps are performed by the `run_analysis.R` script.
 
