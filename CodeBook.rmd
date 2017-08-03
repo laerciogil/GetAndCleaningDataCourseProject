@@ -53,10 +53,11 @@ if (is.numeric(var)) {
 }
 cat("</pre>
 
-***
 ")
 }
 ```
+
+***
 
 ### Measure Variables
 ```{r MeasureVariables, results="asis", eval=TRUE}
@@ -70,7 +71,6 @@ for (varname in names(tidy[3:length(tidy)])) {
 print(summary(var))
 cat("</pre>
 
-***
 ")
 }
 ```
