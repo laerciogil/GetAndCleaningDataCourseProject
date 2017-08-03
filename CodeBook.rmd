@@ -1,5 +1,5 @@
 ---
-title: "Code book for the Get And Cleaning Data Course Final Assignment"
+title: "Codebook"
 author: "Laercio Gil"
 date: "01/08/2017"
 output:
@@ -7,24 +7,74 @@ output:
     keep_md: yes
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+tidy <- read.table("tidy.txt", sep = " ")
+```
+
 ##Description of the variables in the tidy.txt file
+
 General description of the file including:
- - Dimensions of the dataset
- - Summary of the data
- - Variables present in the dataset
+
+- Dimensions of the dataset
+- Summary of the data
+- Variables present in the dataset
 
 (you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
 
 ###Variable 1 (repeat this section for all variables in the dataset)
+
 Short description of what the variable describes.
 
 Some information on the variable including:
- - Class of the variable
- - Unique values/levels of the variable
- - Unit of measurement (if no unit of measurement list this as well)
- - In case names follow some schema, describe how entries were constructed (for example time-body-gyroscope-z has 4 levels of descriptors. Describe these 4 levels). 
+
+- Class of the variable
+- Unique values/levels of the variable
+- Unit of measurement (if no unit of measurement list this as well)
+- In case names follow some schema, describe how entries were constructed (for example time-body-gyroscope-z has 4 levels of descriptors. Describe these 4 levels).
 
 (you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
+
+This is an introductory sentence with absolutely no interest.
+
+###Key Variables
+```{r KeyVariables, results="asis", eval=TRUE}
+for (varname in names(tidy[1:2])) {
+  var <- tidy[, varname]
+  cat("
+#### **`", varname,"`**
+* **Class**: ", class(var),"
+* **Summary**: 
+<pre>")
+if (is.numeric(var)) {
+  print(table(var))
+} else {
+  print(summary(var))
+}
+cat("</pre>
+
+***
+")
+}
+```
+
+###Measure Variables
+```{r MeasureVariables, results="asis", eval=TRUE}
+for (varname in names(tidy[3:length(tidy)])) {
+  var <- tidy[, varname]
+  cat("
+#### **`", varname,"`**
+* **Class**: ", class(var),"
+* **Summary**: 
+<pre>")
+print(summary(var))
+cat("</pre>
+
+***
+")
+}
+```
+
 
 ####Notes on variable 1:
 If available, some additional notes on the variable not covered elsewehere. If no notes are present leave this section out.
