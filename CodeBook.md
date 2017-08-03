@@ -4,7 +4,7 @@ Laercio Gil
 
 
 
-##Description of the variables in the tidy.txt file
+## Description of the variables in the tidy.txt file
 
 General description of the file including:
 
@@ -14,7 +14,7 @@ General description of the file including:
 
 (you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
 
-###Variable 1 (repeat this section for all variables in the dataset)
+### Variable 1 (repeat this section for all variables in the dataset)
 
 Short description of what the variable describes.
 
@@ -29,7 +29,7 @@ Some information on the variable including:
 
 This is an introductory sentence with absolutely no interest.
 
-###Key Variables
+### Key Variables
 
 #### **` activity `**
 * **Class**:  factor 
@@ -54,7 +54,7 @@ This is an introductory sentence with absolutely no interest.
 
 ***
 
-###Measure Variables
+### Measure Variables
 
 #### **` tBodyAccMeanX `**
 * **Class**:  numeric 
@@ -768,5 +768,5 @@ This is an introductory sentence with absolutely no interest.
 ***
 
 
-####Notes on variable 1:
+#### Notes on variable 1:
 If available, some additional notes on the variable not covered elsewehere. If no notes are present leave this section out.
