@@ -20,7 +20,7 @@ The variables that gave rise to the calculated mean values obey the following no
 
 ***
 
-##File Variables
+## File Variables
 
 ### Key Variables
 
