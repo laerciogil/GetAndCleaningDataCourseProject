@@ -4,51 +4,40 @@ Laercio Gil
 
 
 
-## Description of the variables in the tidy.txt file
+## The tidy.txt file
 
-General description of the file including:
+The tidy.txt file is the product of the processing performed by the run_analysis.R file. It is in csv format, in UTF-8 encoding, using a blank space as a column separator. The file contains 180 observations with 81 variables each. The observations consist of 6 activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) performed by each of the 30 volunteers. The first two variables are dataset keys identifying the activities performed and the subjects identified by their ids. The other variables are averages calculated on the data collected by the accelerometer and gyroscope of the cellular attached to the waist of the subjects.
+The variables that gave rise to the calculated mean values obey the following nomenclature pattern:  
 
-- Dimensions of the dataset
-- Summary of the data
-- Variables present in the dataset
+* *f*: indicates frequency domain values;
+* *t*: indicates time domain values;
+* *Acc*: Acceleration;
+* *Mean*: Mean (Average);
+* *Std*: Standard deviation;
+* *Gyro*: Gyroscope;
+* *Mag*: Magnitude;
+* *BodyBody*: Body.
 
-(you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
+***
 
-### Variable 1 (repeat this section for all variables in the dataset)
-
-Short description of what the variable describes.
-
-Some information on the variable including:
-
-- Class of the variable
-- Unique values/levels of the variable
-- Unit of measurement (if no unit of measurement list this as well)
-- In case names follow some schema, describe how entries were constructed (for example time-body-gyroscope-z has 4 levels of descriptors. Describe these 4 levels).
-
-(you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
-
-This is an introductory sentence with absolutely no interest.
+##File Variables
 
 ### Key Variables
 
 #### **` activity `**
 * **Class**:  factor 
-* **Summary**: 
-<pre>            LAYING            SITTING           STANDING 
-                30                 30                 30 
-           WALKING WALKING_DOWNSTAIRS   WALKING_UPSTAIRS 
-                30                 30                 30 
+* **Values**: 
+<pre>[1] LAYING             SITTING            STANDING          
+[4] WALKING            WALKING_DOWNSTAIRS WALKING_UPSTAIRS  
+6 Levels: LAYING SITTING STANDING WALKING ... WALKING_UPSTAIRS
 </pre>
 
 
 #### **` subject `**
 * **Class**:  integer 
-* **Summary**: 
-<pre>var
- 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 
- 6  6  6  6  6  6  6  6  6  6  6  6  6  6  6  6  6  6  6  6  6  6  6  6  6 
-26 27 28 29 30 
- 6  6  6  6  6 
+* **Values**: 
+<pre> [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+[24] 24 25 26 27 28 29 30
 </pre>
 
 ***
@@ -685,7 +674,3 @@ This is an introductory sentence with absolutely no interest.
 <pre>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 -0.9976 -0.9802 -0.8941 -0.7715 -0.6081  0.2878 
 </pre>
-
-
-#### Notes on variable 1:
-If available, some additional notes on the variable not covered elsewehere. If no notes are present leave this section out.
