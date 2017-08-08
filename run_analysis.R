@@ -57,6 +57,6 @@ data <- merge(activityDT, data, by.x = "activityId", by.y = "activityId")
 data <- aggregate(data[, 4:length(data)], list(activity = data$activityName, subject = data$subjectId), mean)
 
 ##write the tidy data in an out text file
-write.table(data, "./tidy.txt")
+write.table(data, "./tidy.txt", row.names = FALSE)
 
 rm(list = ls())
