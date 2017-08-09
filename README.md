@@ -13,7 +13,7 @@ This project aims to carry out a series of tasks proposed to meet the requiremen
 
 ## Original Dataset
 We used the Human Activity Recognition Using Smartphones Dataset from the UCI Machine Learning Repository. These data were collected through an experiment with 30 volunteers performing six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) using the sensors embedded in the smartphone that each participant wore at the waist.  
-A full description of all files is available at the [site](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) where the [data](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) was obtained. Nevertheless, the script itself automatically downloads the data
+A full description of all files is available at the [site](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) where the [data](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) was obtained. Although, the script itself automatically downloads the data.
 
 #### The dataset includes the following main files:
 - `README.txt`
@@ -30,11 +30,11 @@ A full description of all files is available at the [site](http://archive.ics.uc
 All this steps are performed by the `run_analysis.R` script.
 
 **1. Download and unzip data files**  
-The directory that stores the original dataset files is created if it does not already exist. After this, the files are downloaded and then decompressed.
+The directory that stores the original dataset files is created, if it does not exist. After this, the files are downloaded and then decompressed.
 
 
 **2. Read `activity_labels.txt` and `features.txt` files to dataframes**  
-This files contains the descriptions of all activities that was performed by the volunteers and the variables names in the train and test datasets respectively.
+This files contains the descriptions of all activities that was performed by the volunteers and the variables names in the *train* and *test* datasets respectively.
 
 **3. Subset the variables names that contains mean and standard deviation from features dataframe**  
 This action is performed searching the values that contains the text *mean* or *std* using the grep function:  
